@@ -1,102 +1,103 @@
-🖲️ KDE Plasma On/Off Switch Commands Plasmoid
+# 🖲️ KDE Plasma Custom Switch and Relay Control v2
 
-A fully configurable command-based On/Off switch for KDE Plasma 6.5+.
+A simple, fully customizable On/Off switch for your KDE Plasma 6 desktop. This widget lets you flip a switch right on your desktop or taskbar to run terminal commands, control background programs, or toggle real-world electronics. 
 
-This plasmoid allows you to run any custom shell commands when toggled ON or OFF, with visual feedback, color customization, and an optional automatic state watcher.
-It’s ideal for toggling services, hardware controls, scripts, or system utilities directly from your desktop or panel.
+Inspired by and expanded from the Intika On/Off Switch and alduccino On/Off Switch widgets.
 
-✨ Features
+- **Fork Source:** [alduccino/on-off-switch-plasmoid](https://github.com)
+- **Original Source:** [Intika-KDE-Plasmoids/plasmoid-on-off-switch-commands](https://github.com)
 
-⚙️ Command-based control: Assign shell commands for both ON and OFF states.
+---
 
-🟢 Dynamic visual feedback: Customizable text and colors for ON, OFF, and INACTIVE states.
+## ✨ Features
 
-🎨 Highly customizable UI:
+- **Run Any Command:** Type in a command to run when the switch turns ON, and another for when it turns OFF.
+- **Timer & Auto-Loop:** Set the switch to turn itself off (or back on) automatically after a few minutes. You can even set it to loop back and forth.
+- **Day & Time Scheduler:** Schedule the switch to force itself ON or OFF at a specific time on chosen days of the week (like every weekday at 8:00 AM).
+- **USB Relay Control:** Built-in support for USB relay boards (CH340/HID modules). This lets the desktop switch directly trigger real-world electronic circuits and smart hardware.
+- **Live Status Watcher:** Set the switch to look at a file or check a background setting so it always shows your computer's true live status.
+- **Smart Startup:** Choose whether the switch defaults to ON or OFF every time you boot up your computer.
 
-Adjustable button width, height, font size, and padding
+---
 
-Border and background colors for each state
+## 🎨 Design Options
 
-Opacity control for transparent buttons
+- **4 Different Styles:** Change the look instantly between a sliding **Toggle Switch**, a regular **Push Button**, a **Checkbox**, or a round **Power Button**.
+- **Custom Icons:** Don't like the default look? Type in the path to your own PNG or SVG picture to use it as the button icon.
+- **Auto-Sizing:** The widget automatically scales so your text never gets clipped or cut off, no matter what font size you choose.
+- **Color & Opacity:** Full control over text colors, borders, background colors, and transparency for every single switch state.
 
-🔁 Watcher mode: Periodically executes a custom command to reflect live system state.
+---
 
-🚀 Startup behavior: Automatically toggle ON or check state when Plasma starts.
+## 🧰 How to Install
 
-🧩 Built for Plasma 6.5+: Uses metadata.json and QML best practices for KDE Plasma 6.
+### Method 1: For CachyOS / Arch Linux (Recommended Package Build)
+If you are on an Arch Linux-based system like CachyOS, you can easily install and manage the widget securely through your package manager:
 
-🧰 Installation
-🔹 1. Clone this repository
-git clone https://github.com/Intika-KDE-Plasmoids/plasmoid-on-off-switch-commands.git
-cd plasmoid-on-off-switch-commands
+```bash
+git clone https://github.com
+cd customswitchrelaycontrol
+makepkg -si
+```
 
-🔹 2. Run the installer
-chmod +x install.sh
-./install.sh
+### Method 2: Manual Installation (Any Linux Distribution)
+```bash
+git clone https://github.com
+cd customswitchrelaycontrol
+kpackagetool6 --type Plasma/Applet --install .
+```
+*(Note: Use `kpackagetool5` instead if you are using an older version of the desktop).*
 
-The installer will:
+#### ⚠️ Important: Restart Your Desktop to Finish
+After installing, restart your desktop panel so the new switch settings show up correctly. Run this clean systemd command in your terminal:
+```bash
+systemctl --user restart plasma-plasmashell
+```
 
-Create the plasmoid structure under
-~/.local/share/plasma/plasmoids/org.kde.plasma.onoffswitch/
+---
 
-Install metadata, QML, and configuration files
+## 🔧 Fix USB Hardware Permissions (For Relay Board Users)
 
-Restart the Plasma shell to apply changes
+By default, Arch Linux and CachyOS block regular users from accessing raw USB port hardware directly (like `/dev/ttyUSB0`). If you are using a USB relay board, **you must grant your user account access to the serial group, or your switch clicks will do nothing.**
 
-🖥️ Adding the Widget
+Open your terminal and run this single security command:
+```bash
+sudo usermod -aG uucp \$USER
+```
+*Note: Log out of your desktop session completely and log back in to apply the group permissions!*
 
-Right-click your desktop or panel
+---
 
-Select “Add Widgets…”
+## 🗑️ How to Uninstall
 
-Search for “On/Off Switch Commands”
+To completely remove the widget and clear all of its saved settings from your computer, run these commands:
 
-Drag and drop it onto your panel or desktop
+```bash
+kpackagetool6 --type Plasma/Applet --remove org.kde.plasma.customswitchrelaycontrol
+rm -rf ~/.local/share/plasma/plasmoids/org.kde.plasma.customswitchrelaycontrol
+systemctl --user restart plasma-plasmashell
+```
 
-⚙️ Configuration
+---
 
-Right-click the widget → Configure On/Off Switch Commands…
+## 🖥️ How to Add the Switch to Your Desktop
 
-Options include:
+1. Right-click an empty space on your desktop or taskbar panel.
+2. Click **"Add Widgets..."** to open your widget menu.
+3. Search for **"Custom Switch Relay Control v2"**.
+4. Drag and drop it exactly where you want it to live!
 
-Command On / Off: Shell commands to execute when toggled
+---
 
-Text On / Off / Inactive: Display text for each state
+## 🧑‍💻 Example Ideas (What can you do with it?)
 
-Watcher Command: Automatically check external status (e.g., service state)
+| What you want to do | Command ON | Command OFF |
+| :--- | :--- | :--- |
+| **Turn Wi-Fi On/Off** | `nmcli radio wifi on` | `nmcli radio wifi off` |
+| **Turn Bluetooth On/Off** | `rfkill unblock bluetooth` | `rfkill block bluetooth` |
+| **Mount a backup drive** | `mount /mnt/data` | `umount /mnt/data` |
+| **Turn on dark mode** | `plasma-apply-colorscheme BreezeDark` | `plasma-apply-colorscheme BreezeLight` |
 
-Watcher Interval: Interval in seconds (1–3600)
+---
 
-Colors: Background, border, and text colors for each state
-
-Button Style: Width, height, border width, padding, font size, opacity
-
-Startup Behavior: Execute ON command or check state on startup
-
-🆕 New in v2.2.0
-
-Added button width & height controls (0 = auto-size)
-
-Added font size option (0 = default size)
-
-Added background transparency control (0–100%)
-
-Added border width & color customization for each state
-
-Added button padding configuration
-
-Improved Plasma 6.5+ compatibility
-
-🧑‍💻 Example Use Cases
-Task	                     Command ON	                            Command OFF
-Toggle Wi-Fi	             nmcli radio wifi on	                  nmcli radio wifi off
-Enable Bluetooth	         rfkill unblock bluetooth	              rfkill block bluetooth
-Mount a drive	             mount /mnt/data	                      umount /mnt/data
-Start/stop a service	     systemctl start nginx	                systemctl stop nginx
-Enable dark mode	         plasma-apply-colorscheme BreezeDark	  plasma-apply-colorscheme BreezeLight
-
-🔧 Uninstallation
-
-To remove the plasmoid:
-rm -rf ~/.local/share/plasma/plasmoids/org.kde.plasma.onoffswitch
-kquitapp6 plasmashell && kstart plasmashell &
+*Built with help and assistance of AI.*
