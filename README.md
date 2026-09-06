@@ -35,14 +35,14 @@ Inspired by and expanded from the Intika On/Off Switch and alduccino On/Off Swit
 If you are on an Arch Linux-based system like CachyOS, you can easily install and manage the widget securely through your package manager:
 
 ```bash
-git clone https://github.com
+git clone https://github.com/Grody93/customSwitchRelayControl.git
 cd customswitchrelaycontrol
 makepkg -si
 ```
 
 ### Method 2: Manual Installation (Any Linux Distribution)
 ```bash
-git clone https://github.com
+git clone https://github.com/Grody93/customSwitchRelayControl.git
 cd customswitchrelaycontrol
 kpackagetool6 --type Plasma/Applet --install .
 ```
