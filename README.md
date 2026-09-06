@@ -32,21 +32,19 @@ Inspired by and expanded from the Intika On/Off Switch and alduccino On/Off Swit
 ## 🧰 How to Install
 
 ### Method 1: For CachyOS / Arch Linux (Recommended Package Build)
-If you are on an Arch Linux-based system like CachyOS, you can easily install and manage the widget securely through your package manager:
-
 ```bash
-git clone https://github.com/Grody93/customSwitchRelayControl.git
+git clone https://github.com
 cd customswitchrelaycontrol
 makepkg -si
 ```
 
 ### Method 2: Manual Installation (Any Linux Distribution)
 ```bash
-git clone https://github.com/Grody93/customSwitchRelayControl.git
+git clone https://github.com
 cd customswitchrelaycontrol
 kpackagetool6 --type Plasma/Applet --install .
 ```
-*(Note: Use `kpackagetool5` instead if you are using an older version of the desktop).*
+*(Use `kpackagetool5` for older desktop versions).*
 
 #### ⚠️ Important: Restart Your Desktop to Finish
 After installing, restart your desktop panel so the new switch settings show up correctly. Run this clean systemd command in your terminal:
