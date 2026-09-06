@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://kde.org"
+      xmlns:xsi="http://w3.org"
+      xsi:schemaLocation="http://kde.org
+      http://kde.org/kcfg.xsd" >
+    <kcfgfile name=""/>
+
+    <group name="General">
+        <entry name="commandOn" type="String"><default></default></entry>
+        <entry name="commandOff" type="String"><default></default></entry>
+        <entry name="labelText" type="String"><default>Switch</default></entry>
+        <entry name="tooltipText" type="String"><default>Custom Switch</default></entry>
+        <entry name="startupState" type="Int"><default>1</default></entry>
+        <entry name="executeCommandOnStartup" type="Bool"><default>false</default></entry>
+
+        <!-- Timer Task Settings Module -->
+        <entry name="autoOffEnabled" type="Bool"><default>false</default></entry>
+        <entry name="autoOffDuration" type="Int"><default>30</default></entry>
+        <entry name="autoOnEnabled" type="Bool"><default>false</default></entry>
+        <entry name="autoOnDuration" type="Int"><default>30</default></entry>
+
+        <!-- Task Scheduler Cron Options -->
+        <entry name="autoOffRepeat" type="Int"><default>0</default></entry>
+        <entry name="autoOffRepeatState" type="Int"><default>0</default></entry>
+        <entry name="autoOffHour" type="Int"><default>22</default></entry>
+        <entry name="autoOffMinute" type="Int"><default>0</default></entry>
+        <entry name="relayScheduleDaysActive" type="String"><default>0,0,0,0,0,0,0</default></entry>
+
+        <!-- Individualized Custom Task Scripts -->
+        <entry name="customTimerCommandEnabled" type="Bool"><default>false</default></entry>
+        <entry name="customTimerOnCommand" type="String"><default></default></entry>
+        <entry name="customTimerOffCommand" type="String"><default></default></entry>
+        <entry name="customScheduleCommandEnabled" type="Bool"><default>false</default></entry>
+        <entry name="customScheduleCommand" type="String"><default></default></entry>
+
+        <!-- Watcher Monitor Core -->
+        <entry name="watcherEnabled" type="Bool"><default>false</default></entry>
+        <entry name="watcherCommand" type="String"><default></default></entry>
+        <entry name="watcherInterval" type="Int"><default>5</default></entry>
+
+        <!-- Relay Module Parameters -->
+        <entry name="relayEnabled" type="Bool"><default>false</default></entry>
+        <entry name="relayDevice" type="String"><default>/dev/ttyUSB0</default></entry>
+        <entry name="relayMode" type="Int"><default>0</default></entry>
+        <entry name="relayControlMode" type="Int"><default>0</default></entry>
+        <entry name="relayCount" type="Int"><default>1</default></entry>
+        <entry name="relayOnMask" type="Int"><default>1</default></entry>
+        <entry name="relayEnabledMask" type="Int"><default>1</default></entry>
+        <entry name="relayChannel" type="Int"><default>1</default></entry>
+        <entry name="buttonStyle" type="Int"><default>0</default></entry>
+        <entry name="fontPadding" type="Int"><default>2</default></entry>
+        <entry name="fontSize" type="Int"><default>0</default></entry>
+        <entry name="fontFamily" type="String"><default></default></entry>
+        <entry name="fontWeight" type="Int"><default>0</default></entry>
+        <entry name="fontLetterSpacing" type="Int"><default>0</default></entry>
+        <entry name="fontPosition" type="Int"><default>1</default></entry>
+        <entry name="trackWidth" type="Int"><default>40</default></entry>
+        <entry name="trackHeight" type="Int"><default>15</default></entry>
+        <entry name="trackRadius" type="Int"><default>0</default></entry>
+        <entry name="ballSize" type="Int"><default>18</default></entry>
+        <entry name="ballRadius" type="Int"><default>0</default></entry>
+        <entry name="ballColor" type="String"><default>#FFFFFF</default></entry>
+        <entry name="ballBorderColor" type="String"><default>#555555</default></entry>
+        <entry name="ballBorderWidth" type="Int"><default>1</default></entry>
+        <entry name="colorOn" type="String"><default>#4CAF50</default></entry>
+        <entry name="colorOff" type="String"><default>#F44336</default></entry>
+        <entry name="textColorOn" type="String"><default>#FFFFFF</default></entry>
+        <entry name="textColorOff" type="String"><default>#FFFFFF</default></entry>
+        <entry name="borderColorOn" type="String"><default>#45A049</default></entry>
+        <entry name="borderColorOff" type="String"><default>#D32F2F</default></entry>
+        <entry name="borderWidth" type="Int"><default>1</default></entry>
+        <entry name="buttonWidth" type="Int"><default>0</default></entry>
+        <entry name="buttonHeight" type="Int"><default>0</default></entry>
+        <entry name="buttonBgColor" type="String"><default>transparent</default></entry>
+        <entry name="buttonBgRadius" type="Int"><default>8</default></entry>
+        <entry name="buttonBorderColor" type="String"><default>transparent</default></entry>
+        <entry name="buttonBorderWidth" type="Int"><default>0</default></entry>
+        <entry name="backgroundOpacity" type="Int"><default>100</default></entry>
+        <entry name="powerShape" type="Int"><default>0</default></entry>
+        <entry name="powerIconSize" type="Int"><default>50</default></entry>
+        <entry name="powerBorderVisible" type="Bool"><default>true</default></entry>
+        <entry name="powerImagePadding" type="Int"><default>0</default></entry>
+        <entry name="powerLabelSpacing" type="Int"><default>2</default></entry>
+        <entry name="powerIconOn" type="String"><default></default></entry>
+        <entry name="powerIconOff" type="String"><default></default></entry>
+        <entry name="relayAdvOn_1" type="String"><default>A0,01,01,A2</default></entry>
+        <entry name="relayAdvOn_2" type="String"><default>A0,02,01,A3</default></entry>
+        <entry name="relayAdvOn_3" type="String"><default>A0,03,01,A4</default></entry>
+        <entry name="relayAdvOn_4" type="String"><default>A0,04,01,A5</default></entry>
+        <entry name="relayAdvOn_5" type="String"><default>A0,05,01,A6</default></entry>
+        <entry name="relayAdvOn_6" type="String"><default>A0,06,01,A7</default></entry>
+        <entry name="relayAdvOn_7" type="String"><default>A0,07,01,A8</default></entry>
+        <entry name="relayAdvOn_8" type="String"><default>A0,08,01,A9</default></entry>
+        <entry name="relayAdvOff_1" type="String"><default>A0,01,00,A1</default></entry>
+        <entry name="relayAdvOff_2" type="String"><default>A0,02,00,A2</default></entry>
+        <entry name="relayAdvOff_3" type="String"><default>A0,03,00,A3</default></entry>
+        <entry name="relayAdvOff_4" type="String"><default>A0,04,00,A4</default></entry>
+        <entry name="relayAdvOff_5" type="String"><default>A0,05,00,A5</default></entry>
+        <entry name="relayAdvOff_6" type="String"><default>A0,06,00,A6</default></entry>
+        <entry name="relayAdvOff_7" type="String"><default>A0,07,00,A7</default></entry>
+        <entry name="relayAdvOff_8" type="String"><default>A0,08,00,A8</default></entry>
+        <entry name="relayAdvDataString" type="String"><default></default></entry>
+    </group>
+</kcfg>
